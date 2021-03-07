@@ -1,0 +1,6 @@
+Análisis:
+    a.05  pts  ¿Qué  figuras  se  encuentran  en  el  dibujo?  Es  decir,  si  pudieras  separar  el  dibujo  en  varias  figuras individuales, ¿cuáles se repiten? ¿cuáles no? ¿cuáles se forman a partir de figuras más simples?
+    b.10 pts ¿Qué condiciones o restricciones debes tomar en cuenta (respecto a las figuras, colores, tamaños)?
+
+Diseño:
+    a.15 pts¿Cuáles son los pasos para realizar el dibujo? (algoritmo: diagrama de flujo o pseudocódigo)
