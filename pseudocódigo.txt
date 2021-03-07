@@ -1,6 +1,22 @@
 Análisis:
     a.05  pts  ¿Qué  figuras  se  encuentran  en  el  dibujo?  Es  decir,  si  pudieras  separar  el  dibujo  en  varias  figuras individuales, ¿cuáles se repiten? ¿cuáles no? ¿cuáles se forman a partir de figuras más simples?
+        Se pueden observar:
+            Triángulos equiláteros
+            Cuadrados
+            Rombos
+            Hexágonos
+
+        Todas estas formas se repiten.
+
+        Hay un tipo de rombo hecho por dos triángulos equiláteros
+        Hay un tipo de rombo hecho por dos triángulos isóceles
+
     b.10 pts ¿Qué condiciones o restricciones debes tomar en cuenta (respecto a las figuras, colores, tamaños)?
+        Todas las figuras tienen el mismo tamaño en sus lados.
+        Solo hay dos colores.
+            Los triángulos siempre son cafés
+            Los hexágonos siempre son amarillos
+            Los rombos y los cuadrados pueden variar de color.
 
 Diseño:
     a.15 pts¿Cuáles son los pasos para realizar el dibujo? (algoritmo: diagrama de flujo o pseudocódigo)
