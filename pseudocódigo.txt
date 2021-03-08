@@ -10,6 +10,7 @@ Análisis:
 
         Hay un tipo de rombo hecho por dos triángulos equiláteros
         Hay un tipo de rombo hecho por dos triángulos isóceles
+            La base de los isóceles es la mitad de los otros dos lados.
 
     b.10 pts ¿Qué condiciones o restricciones debes tomar en cuenta (respecto a las figuras, colores, tamaños)?
         Todas las figuras tienen el mismo tamaño en sus lados.
@@ -20,4 +21,132 @@ Análisis:
 
 Diseño:
     a.15 pts¿Cuáles son los pasos para realizar el dibujo? (algoritmo: diagrama de flujo o pseudocódigo)
-puto el que se llame mark
+
+Módulo 1 # Figuras
+
+Función
+    triangulo_equilatero(base):
+        for i in range(3):
+            adelante(base)
+            izquierda(120)
+        
+        relleno("café")
+
+
+Función
+    cuadrado(base, color):
+        for i in range(4):
+            adelante(base)
+            izquierda(90)
+        
+        relleno(color)
+
+Función
+    rombo_regular(base): # Inicia en medio del rombo
+        Levantar_lapiz
+        adelante(base)
+        Bajar_lapiz
+
+        izquierda(120)
+        adelante(base)
+        izquierda(120)
+        adelante(base)
+
+        izquierda(60)
+        adelante(base)
+        izquierda(120)
+        adelante(base)
+
+        relleno("amarillo")
+
+
+
+Función
+    rombo_extendido(lado, color): # Posición totalmente vertical
+        izquierda(76) # INICIA EN LA PARTE INFERIOR
+        adelante(100)
+
+        izquierda(29)
+        adelante(100)
+
+        izquierda(76*2)
+        adelante(100)
+
+        izquierda(29)
+        adelante(100)
+
+        relleno(color)
+
+
+
+Función
+    hexagono(base):
+        for i in range(6):
+            adelante(base)
+            izquierda(60)
+        
+        relleno("amarillo")
+
+Módulo 2: Partes del cuerpo
+
+Función
+    piernas(base): # 2 piernas, 3 Cuadrados c/u, separados por la longitud de un cuadrado
+        cuadrado(base, color_relleno="café")
+
+    izquierda(90)
+    adelante(base)
+    derecha(90)
+
+    cuadrado(base, color_relleno="amarillo")
+
+    izquierda(90)
+    adelante(base)
+    derecha(90)
+
+    cuadrado(base, color_relleno="café")
+
+    derecha(90)
+    adelante(base * 2)
+    izquierda(90)
+    adelante(base * 2)
+
+
+    cuadrado(base, color_relleno="amarillo")
+
+    izquierda(90)
+    adelante(base)
+    derecha(90)
+
+    cuadrado(base, color_relleno="café")
+
+    izquierda(90)
+    adelante(base)
+    derecha(90)
+
+    cuadrado(base, color_relleno="amarillo")
+
+Función
+    cuerpo(base): # Inicio en la base del hexágono izquierdo
+        hexágono(base)
+        
+        adelante(base)        
+        triangulo_equilatero(base)
+        
+        adelante(base)        
+        hexágono(base)
+        
+        izquierda(120)
+        adelante(base*2)
+        derecha(120)
+        adelante(base)
+        derecha(180)
+        triangulo_equilatero(base)
+
+        # Cola
+        izquierda(180)
+        adelante(base)
+        derecha(60)
+        adelante(base)
+        derecha(76+29)
+        rombo_extendido(base)
+
