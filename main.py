@@ -7,8 +7,10 @@
 from turtle import *
 
 
-def triangulo_equilatero(base):
-    fillcolor("yellow")
+# Módulo 1: Figuras básicas
+
+def triangulo_equilatero(base):  # Inicia en el lado inferior
+    fillcolor("brown")
     begin_fill()
 
     for i in range(3):
@@ -18,7 +20,7 @@ def triangulo_equilatero(base):
     end_fill()
 
 
-def cuadrado(base, color_relleno):
+def cuadrado(base, color_relleno):  # Inicia en el lado inferior
     fillcolor(color_relleno)
     begin_fill()
 
@@ -29,7 +31,7 @@ def cuadrado(base, color_relleno):
     end_fill()
 
 
-def rombo_regular(base):  # dos triángulos equiláteros
+def rombo_regular(base):  # Inicia en medio de la figura. Dos triángulos equiláteros
     fillcolor("yellow")
     begin_fill()
 
@@ -49,7 +51,7 @@ def rombo_regular(base):  # dos triángulos equiláteros
     end_fill()
 
 
-def rombo_extendido(lado, color_relleno):  # dos triangulos isóceles
+def rombo_extendido(lado, color_relleno):  # Inicia en la esquina inferior. Dos triangulos isóceles. Posición Vertical
     fillcolor(color_relleno)
     begin_fill()
 
@@ -59,7 +61,7 @@ def rombo_extendido(lado, color_relleno):  # dos triangulos isóceles
     left(29)
     forward(lado)
 
-    left(76*2)
+    left(76 * 2)
     forward(lado)
 
     left(29)
@@ -67,8 +69,10 @@ def rombo_extendido(lado, color_relleno):  # dos triangulos isóceles
 
     end_fill()
 
+    left(76)
 
-def hexagono(base):
+
+def hexagono(base):  # Inicia en el lado inferior
     fillcolor("yellow")
     begin_fill()
 
@@ -77,3 +81,64 @@ def hexagono(base):
         left(60)
 
     end_fill()
+
+
+# Módulo 2: Partes del cuerpo
+
+def piernas(base):  # 2 piernas, 3 Cuadrados c/u, separados por la longitud de un cuadrado
+    # Inicia en la base de la pierna izquierda
+    for i in range(3):
+        pendown()
+        cuadrado(base, "yellow")
+
+        penup()
+        forward(base * 2)
+
+        pendown()
+        cuadrado(base, "yellow")
+
+        penup()
+        left(180)
+        forward(base * 2)
+        right(90)
+        forward(base)
+        right(90)
+
+
+def cuerpo(base):
+    hexagono(base)
+
+    forward(base)
+    triangulo_equilatero(base)
+
+    forward(base)
+    hexagono(base)
+
+    left(120)
+    forward(base*2)
+    right(120)
+    forward(base)
+    right(180)
+    triangulo_equilatero(base)
+
+    # Cola
+
+    left(180)
+    forward(base)
+    right(60)
+    forward(base)
+    right(76+29)
+    rombo_extendido(base, color_relleno="yellow")
+
+
+window = Screen()
+window.bgcolor("white")
+window.title("Jirafa")
+
+rombo_extendido(50, color_relleno="brown")
+
+#cuerpo(100)
+
+window.exitonclick()
+
+

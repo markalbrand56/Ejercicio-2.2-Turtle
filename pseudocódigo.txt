@@ -127,6 +127,6 @@ Función
         adelante(base)
         derecha(60)
         adelante(base)
-        izquierda(29)
+        derecha(76+29)
         rombo_extendido(base)
 
