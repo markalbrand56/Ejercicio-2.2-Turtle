@@ -20,3 +20,4 @@ Análisis:
 
 Diseño:
     a.15 pts¿Cuáles son los pasos para realizar el dibujo? (algoritmo: diagrama de flujo o pseudocódigo)
+puto el que se llame mark
