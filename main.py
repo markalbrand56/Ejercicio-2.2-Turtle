@@ -151,9 +151,11 @@ window = Screen()
 window.bgcolor("white")
 window.title("Jirafa")
 
-#rombo_extendido(50, color_relleno="brown")
+tamaño = 50
+
+# rombo_extendido(50, color_relleno="brown")
 
 # cuerpo(100)
-piernas(50)
+piernas(tamaño)
 
 window.exitonclick()
