@@ -86,7 +86,7 @@ def hexagono(base):  # Inicia en el lado inferior
 # Módulo 2: Partes del cuerpo
 
 def piernas(base):  # 2 piernas, 3 Cuadrados c/u, separados por la longitud de un cuadrado
-    cuadrado(base, color_relleno="brown")
+    cuadrado(base, color_relleno="brown")  # Asignación de color para mantener el patrón
 
     left(90)
     forward(base)
@@ -121,7 +121,7 @@ def piernas(base):  # 2 piernas, 3 Cuadrados c/u, separados por la longitud de u
     cuadrado(base, color_relleno="yellow")
 
 
-def cuerpo(base):
+def cuerpo(base):  # Dos hexágonos, en el espacio entre ellos hay triángilos equiláteros
     hexagono(base)
 
     forward(base)
@@ -146,16 +146,16 @@ def cuerpo(base):
     right(76 + 29)
     rombo_extendido(base, color_relleno="yellow")
 
-
+# INICIO PROGRAMA PRINCIPAL
 window = Screen()
 window.bgcolor("white")
 window.title("Jirafa")
 
-tamaño = 50
+base_de_figuras = 50
 
-# rombo_extendido(50, color_relleno="brown")
+# rombo_extendido(50, color_relleno="brown") # Ejemplo para llamar funciones
 
-# cuerpo(100)
-piernas(tamaño)
+# cuerpo(100) # Ejemplo para llamar funciones
+piernas(base_de_figuras)
 
 window.exitonclick()
