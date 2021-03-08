@@ -91,19 +91,39 @@ Módulo 2: Partes del cuerpo
 
 Función
     piernas(base): # 2 piernas, 3 Cuadrados c/u, separados por la longitud de un cuadrado
-                   # Inicia en la base de la pierna izquierda
-        for i in range(3):
-            cuadrado(base)
-            
-            adelante(base*2)
-            
-            cuadrado(base)
-            
-            izquierda(180)
-            adelante(base*2)
-            derecha(90)
-            adelante(base)
-            derecha(90)
+        cuadrado(base, color_relleno="café")
+
+    izquierda(90)
+    adelante(base)
+    derecha(90)
+
+    cuadrado(base, color_relleno="amarillo")
+
+    izquierda(90)
+    adelante(base)
+    derecha(90)
+
+    cuadrado(base, color_relleno="café")
+
+    derecha(90)
+    adelante(base * 2)
+    izquierda(90)
+    adelante(base * 2)
+
+
+    cuadrado(base, color_relleno="amarillo")
+
+    izquierda(90)
+    adelante(base)
+    derecha(90)
+
+    cuadrado(base, color_relleno="café")
+
+    izquierda(90)
+    adelante(base)
+    derecha(90)
+
+    cuadrado(base, color_relleno="amarillo")
 
 Función
     cuerpo(base): # Inicio en la base del hexágono izquierdo
