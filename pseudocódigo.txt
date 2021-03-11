@@ -173,7 +173,7 @@ Función
 
 Función
 
-    torso (base): #dos hexágonos regulares (amarillos) y dos triángulos (cafes)
+    torso (base): #Inicia la función torso (cuerpo)
 
         hexagono(base) ## primer hexágono
         atras(base)
@@ -183,5 +183,80 @@ Función
         derecha(240) ##en posición para el siguiente triángulo
         triangulo_equilatero(base) ##triángulo superior del cuerpo de la girafa
         adelante(base)
-        hexagono(base) ## segundo hexágono
+        hexagono(base) ##segundo hexágono
 
+Función
+
+    cuello (base): #Inicia la función cuello
+
+        adelante(base) ##Para posicionarse en el ángulo superior izquierdo del hexágono.
+        izquierda(60)
+        adelante(base)
+        izquierda(104)
+
+        rombo_extendido(base, color_relleno = "brown")
+
+        izquierda(90)
+        adelante(base)
+        derecha(29)
+        adelante(base)
+        derecha(60)
+
+        rombo_regular(base)
+
+        izquierda(60)
+        adelante(base)
+        izquierda(120)
+        adelante(base)
+        izquierda(104)
+
+        rombo_extendido(base, color_relleno = "brown")
+
+        izquierda(90)
+        adelante(base)
+        derecha(29)
+        adelante(base)
+        derecha(60)
+
+        rombo_regular(base)
+
+        izquierda(60)
+        adelante(base)
+        izquierda(120)
+        adelante(base)
+        izquierda(104)
+
+        rombo_extendido(base, color_relleno = "yellow")
+
+Función
+    cabeza (base): #Dos rombos no regulares (amarillos) y un triángulo equilatero (cafe)
+
+        izquierda(90)
+        triangulo_equilatero(base)
+        derecha(16)
+        rombo_extendido(base, color_relleno = "#amarillo")
+
+        lt(60)
+        fd(base)
+        lt(30)
+        fd(base)
+        lt(102)
+
+        rombo_extendido(base, color_relleno = "#amarillo")
+
+PROGRAMA
+
+INICIO
+
+    Inicializar ventana
+    color del fondo = blanco
+    nombre de la ventana = jirafa
+    velocidad = más rápida
+    base_de_figuras = 40
+
+
+    piernas(base_de_figuras)
+    cola(base_de_figuras)
+    torso(base_de_figuras)
+    cuello(base_de_figuras)
+    cabeza(base_de_figuras)
