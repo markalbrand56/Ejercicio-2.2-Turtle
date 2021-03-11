@@ -10,7 +10,7 @@ from turtle import *
 # Módulo 1: Figuras básicas
 
 def triangulo_equilatero(base):  # Inicia en el lado inferior
-    fillcolor("brown")
+    fillcolor("#61210B")
     begin_fill()
 
     for i in range(3):
@@ -32,12 +32,8 @@ def cuadrado(base, color_relleno):  # Inicia en el lado inferior
 
 
 def rombo_regular(base):  # Inicia en medio de la figura. Dos triángulos equiláteros
-    fillcolor("yellow")
+    fillcolor("#FFBF00")
     begin_fill()
-
-    penup()
-    forward(base)
-    pendown()
 
     left(120)
     forward(base)
@@ -67,13 +63,14 @@ def rombo_extendido(lado, color_relleno):  # Inicia en la esquina inferior. Dos 
     left(29)
     forward(lado)
 
+    left(90)
+
     end_fill()
 
-    left(76)
 
 
 def hexagono(base):  # Inicia en el lado inferior
-    fillcolor("yellow")
+    fillcolor("#FFBF00")
     begin_fill()
 
     for i in range(6):
@@ -86,19 +83,19 @@ def hexagono(base):  # Inicia en el lado inferior
 # Módulo 2: Partes del cuerpo
 
 def piernas(base):  # 2 piernas, 3 Cuadrados c/u, separados por la longitud de un cuadrado
-    cuadrado(base, color_relleno="brown")  # Asignación de color para mantener el patrón
+    cuadrado(base, color_relleno="#61210B")  # Asignación de color para mantener el patrón
 
     left(90)
     forward(base)
     right(90)
 
-    cuadrado(base, color_relleno="yellow")
+    cuadrado(base, color_relleno="#FFBF00")
 
     left(90)
     forward(base)
     right(90)
 
-    cuadrado(base, color_relleno="brown")
+    cuadrado(base, color_relleno="#61210B")
     penup()
     right(90)
     forward(base * 2)
@@ -106,22 +103,23 @@ def piernas(base):  # 2 piernas, 3 Cuadrados c/u, separados por la longitud de u
     forward(base * 2)
     pendown()
 
-    cuadrado(base, color_relleno="yellow")
+    cuadrado(base, color_relleno="#FFBF00")
 
     left(90)
     forward(base)
     right(90)
 
-    cuadrado(base, color_relleno="brown")
+    cuadrado(base, color_relleno="#61210B")
 
     left(90)
     forward(base)
     right(90)
 
-    cuadrado(base, color_relleno="yellow")
+    cuadrado(base, color_relleno="#FFBF00")
 
 
 def cuerpo(base):  # Dos hexágonos, en el espacio entre ellos hay triángilos equiláteros
+    #ESTA FUNCIÓN NO SE ESTÁ USANDO
     hexagono(base)
 
     forward(base)
@@ -137,25 +135,127 @@ def cuerpo(base):  # Dos hexágonos, en el espacio entre ellos hay triángilos e
     right(180)
     triangulo_equilatero(base)
 
-    # Cola
 
     left(180)
     forward(base)
     right(60)
     forward(base)
     right(76 + 29)
-    rombo_extendido(base, color_relleno="yellow")
+    rombo_extendido(base, color_relleno="#FFBF00")
+
+def cola (base):
+
+    penup()
+    lt(90)
+    fd(base)
+    rt(90)
+    fd(base)
+
+    lt(60)
+    fd(base)
+
+    rt(226)
+
+    pendown()
+    rombo_extendido(base, "#61210B")
+
+    penup()
+    lt(30)
+    fd(base)
+    rt(60)
+    fd(base)
+    lt(180)
+    pendown()
+
+def torso (base): #dos hexágonos regulares (amarillos) y dos triángulos (cafes)
+
+
+
+    hexagono(base)
+
+    bk(base)
+
+    triangulo_equilatero(base)
+
+    lt(60)
+    fd(base * 2)
+    rt(240)
+
+    triangulo_equilatero(base)
+
+    fd(base)
+
+    hexagono(base)
+
+def cuello (base): #tres rombos no regulares (dos cafes, uno amarillo) y dos rombos regulares (amarillos)
+
+    fd(base)
+    lt(60)
+    fd(base)
+    lt(104)
+
+    rombo_extendido(base,"#61210B")
+
+    lt(90)
+    fd(base)
+    rt(29)
+    fd(base)
+    rt(60)
+
+    rombo_regular(base)
+
+    lt(60)
+    fd(base)
+    lt(120)
+    fd(base)
+    lt(104)
+
+    rombo_extendido(base, "#61210B")
+
+    lt(90)
+    fd(base)
+    rt(29)
+    fd(base)
+    rt(60)
+
+    rombo_regular(base)
+
+    lt(60)
+    fd(base)
+    lt(120)
+    fd(base)
+    lt(104)
+
+    rombo_extendido(base, "#FFBF00")
+
+def cabeza (base): #Dos rombos no regulares (amarillos) y un triángulo equilatero (cafe)
+
+    lt(90)
+    triangulo_equilatero(base)
+    rt(16)
+    rombo_extendido(base, "#FFBF00")
+
+    lt(60)
+    fd(base)
+    lt(30)
+    fd(base)
+    lt(102)
+
+    rombo_extendido(base, "#FFBF00")
 
 # INICIO PROGRAMA PRINCIPAL
 window = Screen()
 window.bgcolor("white")
 window.title("Jirafa")
+speed("fastest")
+base_de_figuras = 40
 
-base_de_figuras = 50
 
-# rombo_extendido(50, color_relleno="brown") # Ejemplo para llamar funciones
-
-# cuerpo(100) # Ejemplo para llamar funciones
 piernas(base_de_figuras)
+cola(base_de_figuras)
+torso(base_de_figuras)
+cuello(base_de_figuras)
+cabeza(base_de_figuras)
 
 window.exitonclick()
+
