@@ -68,7 +68,6 @@ def rombo_extendido(lado, color_relleno):  # Inicia en la esquina inferior. Dos 
     end_fill()
 
 
-
 def hexagono(base):  # Inicia en el lado inferior
     fillcolor("#FFBF00")
     begin_fill()
@@ -80,6 +79,7 @@ def hexagono(base):  # Inicia en el lado inferior
     end_fill()
 
 
+# ---------------------------------------------------------------------------------------------------------
 # Módulo 2: Partes del cuerpo
 
 def piernas(base):  # 2 piernas, 3 Cuadrados c/u, separados por la longitud de un cuadrado
@@ -118,33 +118,7 @@ def piernas(base):  # 2 piernas, 3 Cuadrados c/u, separados por la longitud de u
     cuadrado(base, color_relleno="#FFBF00")
 
 
-def cuerpo(base):  # Dos hexágonos, en el espacio entre ellos hay triángilos equiláteros
-    #ESTA FUNCIÓN NO SE ESTÁ USANDO
-    hexagono(base)
-
-    forward(base)
-    triangulo_equilatero(base)
-
-    forward(base)
-    hexagono(base)
-
-    left(120)
-    forward(base * 2)
-    right(120)
-    forward(base)
-    right(180)
-    triangulo_equilatero(base)
-
-
-    left(180)
-    forward(base)
-    right(60)
-    forward(base)
-    right(76 + 29)
-    rombo_extendido(base, color_relleno="#FFBF00")
-
-def cola (base):
-
+def cola(base):  # Se mueve a la posición donde se usa el rombo extendido para hacer la cola
     penup()
     lt(90)
     fd(base)
@@ -167,9 +141,8 @@ def cola (base):
     lt(180)
     pendown()
 
-def torso (base): #dos hexágonos regulares (amarillos) y dos triángulos (cafes)
 
-
+def torso(base):  # dos hexágonos regulares (amarillos) y dos triángulos (cafes)
 
     hexagono(base)
 
@@ -187,14 +160,15 @@ def torso (base): #dos hexágonos regulares (amarillos) y dos triángulos (cafes
 
     hexagono(base)
 
-def cuello (base): #tres rombos no regulares (dos cafes, uno amarillo) y dos rombos regulares (amarillos)
+
+def cuello(base):  # tres rombos no regulares (dos cafes, uno amarillo) y dos rombos regulares (amarillos)
 
     fd(base)
     lt(60)
     fd(base)
     lt(104)
 
-    rombo_extendido(base,"#61210B")
+    rombo_extendido(base, "#61210B")
 
     lt(90)
     fd(base)
@@ -228,7 +202,8 @@ def cuello (base): #tres rombos no regulares (dos cafes, uno amarillo) y dos rom
 
     rombo_extendido(base, "#FFBF00")
 
-def cabeza (base): #Dos rombos no regulares (amarillos) y un triángulo equilatero (cafe)
+
+def cabeza(base):  # Dos rombos no regulares (amarillos) y un triángulo equilatero (cafe)
 
     lt(90)
     triangulo_equilatero(base)
@@ -243,13 +218,14 @@ def cabeza (base): #Dos rombos no regulares (amarillos) y un triángulo equilate
 
     rombo_extendido(base, "#FFBF00")
 
+
+# --------------------------------------------------------------------------------------------------------------
 # INICIO PROGRAMA PRINCIPAL
 window = Screen()
 window.bgcolor("white")
 window.title("Jirafa")
 speed("fastest")
 base_de_figuras = 40
-
 
 piernas(base_de_figuras)
 cola(base_de_figuras)
@@ -258,4 +234,3 @@ cuello(base_de_figuras)
 cabeza(base_de_figuras)
 
 window.exitonclick()
-
