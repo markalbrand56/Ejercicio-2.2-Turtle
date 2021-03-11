@@ -10,7 +10,7 @@ from turtle import *
 # Módulo 1: Figuras básicas
 
 def triangulo_equilatero(base):  # Inicia en el lado inferior
-    fillcolor("brown")
+    fillcolor("#61210B")
     begin_fill()
 
     for i in range(3):
@@ -32,7 +32,7 @@ def cuadrado(base, color_relleno):  # Inicia en el lado inferior
 
 
 def rombo_regular(base):  # Inicia en medio de la figura. Dos triángulos equiláteros
-    fillcolor("yellow")
+    fillcolor("#FFBF00")
     begin_fill()
 
     left(120)
@@ -70,7 +70,7 @@ def rombo_extendido(lado, color_relleno):  # Inicia en la esquina inferior. Dos 
 
 
 def hexagono(base):  # Inicia en el lado inferior
-    fillcolor("yellow")
+    fillcolor("#FFBF00")
     begin_fill()
 
     for i in range(6):
@@ -83,19 +83,19 @@ def hexagono(base):  # Inicia en el lado inferior
 # Módulo 2: Partes del cuerpo
 
 def piernas(base):  # 2 piernas, 3 Cuadrados c/u, separados por la longitud de un cuadrado
-    cuadrado(base, color_relleno="brown")  # Asignación de color para mantener el patrón
+    cuadrado(base, color_relleno="#61210B")  # Asignación de color para mantener el patrón
 
     left(90)
     forward(base)
     right(90)
 
-    cuadrado(base, color_relleno="yellow")
+    cuadrado(base, color_relleno="#FFBF00")
 
     left(90)
     forward(base)
     right(90)
 
-    cuadrado(base, color_relleno="brown")
+    cuadrado(base, color_relleno="#61210B")
     penup()
     right(90)
     forward(base * 2)
@@ -103,26 +103,24 @@ def piernas(base):  # 2 piernas, 3 Cuadrados c/u, separados por la longitud de u
     forward(base * 2)
     pendown()
 
-    cuadrado(base, color_relleno="yellow")
+    cuadrado(base, color_relleno="#FFBF00")
 
     left(90)
     forward(base)
     right(90)
 
-    cuadrado(base, color_relleno="brown")
+    cuadrado(base, color_relleno="#61210B")
 
     left(90)
     forward(base)
     right(90)
 
-    cuadrado(base, color_relleno="yellow")
+    cuadrado(base, color_relleno="#FFBF00")
 
 
 def cuerpo(base):  # Dos hexágonos, en el espacio entre ellos hay triángilos equiláteros
+    #ESTA FUNCIÓN NO SE ESTÁ USANDO
     hexagono(base)
-
-
-
 
     forward(base)
     triangulo_equilatero(base)
@@ -143,10 +141,11 @@ def cuerpo(base):  # Dos hexágonos, en el espacio entre ellos hay triángilos e
     right(60)
     forward(base)
     right(76 + 29)
-    rombo_extendido(base, color_relleno="yellow")
+    rombo_extendido(base, color_relleno="#FFBF00")
 
 def cola (base):
 
+    penup()
     lt(90)
     fd(base)
     rt(90)
@@ -156,14 +155,17 @@ def cola (base):
     fd(base)
 
     rt(226)
-    rombo_extendido(base, "brown")
 
+    pendown()
+    rombo_extendido(base, "#61210B")
+
+    penup()
     lt(30)
     fd(base)
     rt(60)
     fd(base)
     lt(180)
-
+    pendown()
 
 def torso (base): #dos hexágonos regulares (amarillos) y dos triángulos (cafes)
 
@@ -192,7 +194,7 @@ def cuello (base): #tres rombos no regulares (dos cafes, uno amarillo) y dos rom
     fd(base)
     lt(104)
 
-    rombo_extendido(base,"brown")
+    rombo_extendido(base,"#61210B")
 
     lt(90)
     fd(base)
@@ -208,7 +210,7 @@ def cuello (base): #tres rombos no regulares (dos cafes, uno amarillo) y dos rom
     fd(base)
     lt(104)
 
-    rombo_extendido(base, "brown")
+    rombo_extendido(base, "#61210B")
 
     lt(90)
     fd(base)
@@ -224,14 +226,14 @@ def cuello (base): #tres rombos no regulares (dos cafes, uno amarillo) y dos rom
     fd(base)
     lt(104)
 
-    rombo_extendido(base, "yellow")
+    rombo_extendido(base, "#FFBF00")
 
 def cabeza (base): #Dos rombos no regulares (amarillos) y un triángulo equilatero (cafe)
 
     lt(90)
     triangulo_equilatero(base)
     rt(16)
-    rombo_extendido(base, "yellow")
+    rombo_extendido(base, "#FFBF00")
 
     lt(60)
     fd(base)
@@ -239,14 +241,14 @@ def cabeza (base): #Dos rombos no regulares (amarillos) y un triángulo equilate
     fd(base)
     lt(102)
 
-    rombo_extendido(base, "yellow")
+    rombo_extendido(base, "#FFBF00")
 
 # INICIO PROGRAMA PRINCIPAL
 window = Screen()
 window.bgcolor("white")
 window.title("Jirafa")
 speed("fastest")
-base_de_figuras = 20
+base_de_figuras = 40
 
 
 piernas(base_de_figuras)
